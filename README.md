@@ -3,7 +3,7 @@
  
 |   Name   	|                  Value                  	|
 |:--------:	|:---------------------------------------:	|
-| IP       	| 67.205.134.235                          	|
+| IP       	| 142.93.175.148                        	|
 | SSH PORT 	| 2200                                    	|
 | Username 	| grader (SSH key in "Notes to Reviewer") 	|
 | URL      	| http://www.67.205.134.235.xip.io/       	|
@@ -98,16 +98,16 @@ sudo virtualenv venv
 source venv/bin/activate 
 sudo pip install Flask
 sudo pip install sqlalchemy
-sudo pip install python-psycopg2
+sudo pip install psycopg2==2.7.1
+pip install psycopg2-binary
 sudo pip install oauth2client
 sudo pip install requests
 ```
 * Add the following to `sudo nano /etc/apache2/sites-available/Catalog.conf`
 ```
 <VirtualHost *:80>
-   ServerName 67.205.134.235
-   ServerAdmin anexbm@67.205.134.235
-   ServerAlias 67.205.134.235.xip.io
+   ServerName 142.93.175.148
+   ServerAdmin email@142.93.175.148
    WSGIScriptAlias / /var/www/catalog/catalog.wsgi
    <Directory /var/www/catalog/catalog/>
          Order allow,deny
@@ -143,7 +143,7 @@ psql
 ```
 4. Create a user  with a password and give him ability  to login and create new database
 ```
-CREATE USER catalog WITH PASSWORD 'PWD'
+CREATE USER catalog WITH PASSWORD 'PWD';
 ALTER ROLE catalog WITH LOGIN;
 ALTER USER catalog CREATEDB;
 ```
@@ -159,6 +159,9 @@ GRANT ALL ON SCHEMA public TO catalog;
 ```
 \q
 ```
+
+8. Change the line creating the database to use postgres instead of sqlite in the databaseSetup.py, __init__.py and catalogAppData.py
+engine = create_engine('sqlite:///thomascatalog.db') becomes engine = create_engine('postgresql://catalog:pwd@localhost/catalog')
 
 
 
