@@ -84,10 +84,10 @@ Enter file in which to save the key (C:\Users\user-/.ssh/id_rsa):
 
 4. **Configure keys on  the server**
    * Create a directory on the server to store keys: `mkdir .ssh`
-   * Create a file to store keys: `touch ~/.ssh/authorized_keys`
+   * Create a file to store keys: `touch .ssh/authorized_keys`
    * paste key content in authorized_keys 
-   * Change the file permissions of the ~/.ssh directory to 700 (this means only the file owner can read, write, or open the directory): `chmod 700 .ssh`
-   * Change the file permissions of the authorized_keys file to 644 (this means only owner can write, others can read): `chmod 644 ~/.ssh/authorized_keys`
+   * Change the file permissions of the .ssh directory to 700 (this means only the file owner can read, write, or open the directory): `chmod 700 .ssh`
+   * Change the file permissions of the authorized_keys file to 644 (this means only owner can write, others can read): `chmod 644 .ssh/authorized_keys`
  # Configure the local timezone to UTC.
   * `sudo timedatectl set-timezone Etc/UTC`
  # Install and configure Apache to serve a Python mod_wsgi application
@@ -184,11 +184,15 @@ GRANT ALL ON SCHEMA public TO catalog;
 ```
 
 8. Change the line creating the database to use postgres instead of sqlite in the databaseSetup.py, __init__.py and catalogAppData.py
-engine = create_engine('sqlite:///catalog.db') becomes engine = create_engine('postgresql://catalog:pwd@localhost/catalog')
+engine = create_engine('sqlite:///thomascatalog.db') becomes engine = create_engine('postgresql://catalog:pwd@localhost/catalog')
 
 
-
-
+# Resources
+* [How To Install and Use PostgreSQL on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04)
+* [How To Deploy a Flask Application on an Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
+* [Setup SSH Key Authentication On Ubuntu](https://websiteforstudents.com/setup-ssh-key-authentication-on-ubuntu-16-04-17-10-18-04/)
+* [DISABLE LOGIN FOR THE ROOT USER](https://mediatemple.net/community/products/dv/204643810/how-do-i-disable-ssh-login-for-the-root-user)
+* [Enforce SSH key passwords](https://serverfault.com/questions/82649/enforce-ssh-key-passwords)
 
 
 
