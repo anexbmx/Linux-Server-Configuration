@@ -8,6 +8,13 @@
 | Username 	| grader (SSH key in "Notes to Reviewer") 	|
 | URL      	| http://www.142.93.175.148.xip.io/       	|
 
+**To Connect**
+   * save key in your local machine ~/.ssh
+   * and run this command 
+````
+ssh -p 2200 grader@142.93.175.148 -i ~/.ssh/id_rsa
+````
+
 ## Update all currently installed packages
 1. **Update all currently installed packages**
 ```
