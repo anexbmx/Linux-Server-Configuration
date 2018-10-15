@@ -6,7 +6,7 @@
 | IP       	| 142.93.175.148                        	|
 | SSH PORT 	| 2200                                    	|
 | Username 	| grader (SSH key in "Notes to Reviewer") 	|
-| URL      	| http://www.67.205.134.235.xip.io/       	|
+| URL      	| http://www.142.93.175.148 .xip.io/       	|
 
 ## Update all currently installed packages
 1. **Update all currently installed packages**
