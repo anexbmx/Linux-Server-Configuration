@@ -27,7 +27,7 @@ sudo nano /etc/ssh/sshd_config
 ```
 sudo service sshd restart
 ```
-
+3. set PermitRootLogin to no: `PermitRootLogin no`
 # Configure the Uncomplicated Firewall
 1. **allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).**
 ```
@@ -88,7 +88,7 @@ sudo git clone https://github.com/anexbmx/build-an-item-catalog-application.git
    sys.path.insert(0,"/var/www/catalog/")
 
    from catalog import app as application
-   application.secret_key = 'your secret key'
+   application.secret_key = 'secret key'
    ```
 * Install pip and necessary packages 
 ```
@@ -125,8 +125,59 @@ sudo pip install requests
 ```
 
 * Enable site `sudo a2ensite Catalog`
+* `sudo service apache2 restart`
 
-*`sudo service apache2 restart`
+# catalog database
+
+1. Install poastgresql
+```
+sudo apt-get install postgresql postgresql-contrib
+```
+2. Switch to postgres account
+```
+sudo -i -u postgres
+```
+3. Access postgres prompt
+```
+psql
+```
+4. Create a user  with a password and give him ability  to login and create new database
+```
+CREATE USER catalog WITH PASSWORD 'PWD'
+ALTER ROLE catalog WITH LOGIN;
+ALTER USER catalog CREATEDB;
+```
+5. create Database
+```
+CREATE DATABASE catalog WITH OWNER catalog;
+```
+6. Setup permissions
+```
+GRANT ALL ON SCHEMA public TO catalog;
+```
+7. Exit postgres prompt
+```
+\q
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
