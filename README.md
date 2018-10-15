@@ -184,7 +184,7 @@ GRANT ALL ON SCHEMA public TO catalog;
 ```
 
 8. Change the line creating the database to use postgres instead of sqlite in the databaseSetup.py, __init__.py and catalogAppData.py
-engine = create_engine('sqlite:///thomascatalog.db') becomes engine = create_engine('postgresql://catalog:pwd@localhost/catalog')
+engine = create_engine('sqlite:///catalog.db') becomes engine = create_engine('postgresql://catalog:pwd@localhost/catalog')
 
 
 # Resources
