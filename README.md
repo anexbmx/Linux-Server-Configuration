@@ -78,7 +78,18 @@ sudo git clone https://github.com/anexbmx/build-an-item-catalog-application.git
 ```
 * rename catalog  project directory to  catalog `mv build-an-item-catalog-application catalog`
 * move inside catalog and rename application.py to _ _init_ _.py `mv application.py to __init__.py`
-`
+* create new file __catalog.wsgi__ inside __/var/www/catalog/__ 
+* add the following code to __catalog.wsgi__
+```
+   #!/usr/bin/python
+   import sys
+   import logging
+   logging.basicConfig(stream=sys.stderr)
+   sys.path.insert(0,"/var/www/catalog/")
+
+   from catalog import app as application
+   application.secret_key = 'your secret key'
+   ```
 * Install pip and necessary packages 
 ```
 sudo apt-get install python-pip
@@ -114,41 +125,8 @@ sudo pip install requests
 ```
 
 * Enable site `sudo a2ensite Catalog`
-* create new file __catalog.wsgi__ inside __/var/www/catalog/__ 
-* add the following code to __catalog.wsgi__
-```
-   #!/usr/bin/python
-   import sys
-   import logging
-   logging.basicConfig(stream=sys.stderr)
-   sys.path.insert(0,"/var/www/catalog/")
 
-   from catalog import app as application
-   application.secret_key = 'your secret key'
-   ```
-* `sudo service apache2 restart`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*`sudo service apache2 restart`
 
 
 
