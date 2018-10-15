@@ -6,7 +6,7 @@
 | IP       	| 142.93.175.148                        	|
 | SSH PORT 	| 2200                                    	|
 | Username 	| grader (SSH key in "Notes to Reviewer") 	|
-| URL      	| http://www.142.93.175.148.xip.io/       	|
+| URL      	| http://www.67.205.134.235.xip.io/       	|
 
 ## Update all currently installed packages
 1. **Update all currently installed packages**
@@ -27,7 +27,23 @@ sudo nano /etc/ssh/sshd_config
 ```
 sudo service sshd restart
 ```
-3. set PermitRootLogin to no: `PermitRootLogin no`
+
+# Disable remote login of the root user
+edited /etc/ssh/sshd_config file, and changed line:
+PermitRootLogin without-password to no
+````
+PermitRootLogin no
+sudo service ssh restart
+````
+
+# Forcing Key Based Authentication
+edited /etc/ssh/sshd_config file from
+  * PasswordAuthentication yes to no
+````
+PasswordAuthentication no
+sudo service ssh restart
+````
+
 # Configure the Uncomplicated Firewall
 1. **allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123).**
 ```
