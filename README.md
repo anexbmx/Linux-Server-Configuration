@@ -198,7 +198,25 @@ engine = create_engine('sqlite:///catalog.db') becomes engine = create_engine('p
 
 
 
+Summary of software installed:
+Ubuntu packages:
 
+apache2
+mod_wsgi
+postgresql
+python
+pip
+Python packages:
+
+Flask
+sqlalchemy
+sqlalchemy-Utils
+psycopg2
+virtualenv
+oauth2client
+httplib2
+urllib3
+requests
 
 
 
