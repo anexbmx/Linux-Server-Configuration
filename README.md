@@ -108,14 +108,14 @@ Enter file in which to save the key (C:\Users\user-/.ssh/id_rsa):
  # Install and configure Apache to serve a Python mod_wsgi application
 
 * Install Apache `sudo apt-get install apache2`
-* Install mod_wsgi `sudo apt-get install libapache2-mod-wsgi python-dev` & Enabke mod_wsgi `sudo a2enmod wsgi
+* Install mod_wsgi `sudo apt-get install libapache2-mod-wsgi python-dev` & Enable mod_wsgi `sudo a2enmod wsgi`
 * create a directory ` mkdir /var/www/catalog`
 * Move inside this directory and clone project by git clone 
 ```
 sudo git clone https://github.com/anexbmx/build-an-item-catalog-application.git
 ```
 * rename catalog  project directory to  catalog `mv build-an-item-catalog-application catalog`
-* move inside catalog and rename application.py to _ _init_ _.py `mv application.py to __init__.py`
+* move inside catalog and rename application.py to _ _init_ _.py `mv application.py  __init__.py`
 * create new file __catalog.wsgi__ inside __/var/www/catalog/__ 
 * add the following code to __catalog.wsgi__
 ```
