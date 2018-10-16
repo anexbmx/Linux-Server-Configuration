@@ -3,10 +3,10 @@
  
 |   Name   	|                  Value                  	|
 |:--------:	|:---------------------------------------:	|
-| IP       	| 142.93.175.148                        	|
+| IP       	| 104.248.29.48                           	|
 | SSH PORT 	| 2200                                    	|
 | Username 	| grader (SSH key in "Notes to Reviewer") 	|
-| URL      	| http://www.142.93.175.148.xip.io/       	|
+| URL      	| http://104.248.29.48.xip.io/            	|
 
 **To Connect**
    * save key in your local machine ~/.ssh
@@ -14,6 +14,21 @@
 ````
 ssh -p 2200 grader@142.93.175.148 -i ~/.ssh/id_rsa
 ````
+# Summary of software installed:
+* apache2
+* mod_wsgi
+* postgresql
+* python
+* pip
+* Flask
+* sqlalchemy
+* psycopg2-binary
+* psycopg2
+* virtualenv
+* oauth2client
+* httplib2
+* urllib3
+* requests
 
 ## Update all currently installed packages
 1. **Update all currently installed packages**
@@ -122,7 +137,7 @@ source venv/bin/activate
 sudo pip install Flask
 sudo pip install sqlalchemy
 sudo pip install psycopg2==2.7.1
-pip install psycopg2-binary
+sudo pip install psycopg2-binary
 sudo pip install oauth2client
 sudo pip install requests
 ```
@@ -198,25 +213,7 @@ engine = create_engine('sqlite:///catalog.db') becomes engine = create_engine('p
 
 
 
-Summary of software installed:
-Ubuntu packages:
 
-apache2
-mod_wsgi
-postgresql
-python
-pip
-Python packages:
-
-Flask
-sqlalchemy
-sqlalchemy-Utils
-psycopg2
-virtualenv
-oauth2client
-httplib2
-urllib3
-requests
 
 
 
