@@ -198,8 +198,13 @@ GRANT ALL ON SCHEMA public TO catalog;
 \q
 ```
 
-8. Change the line creating the database to use postgres instead of sqlite in the databaseSetup.py, __init__.py and catalogAppData.py
-engine = create_engine('sqlite:///catalog.db') becomes engine = create_engine('postgresql://catalog:pwd@localhost/catalog')
+8. Change the line creating the database to use postgres instead of sqlite in the **databaseSetup.py**, **_ _init_ _.py** and **catalogAppData.py**
+````
+engine = create_engine('sqlite:///catalog.db')
+becomes
+engine = create_engine('postgresql://catalog:pwd@localhost/catalog')
+````
+  
 
 
 # Resources
